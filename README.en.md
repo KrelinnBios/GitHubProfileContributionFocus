@@ -17,7 +17,7 @@
   <a href="README.en.md">English</a>
 </p>
 
-## Overview
+## About
 
 GitHub Profile Contribution Focus is a reusable GitHub Action. It reads the visible contributions in a GitHub profile's “last year” range and generates a repository-by-month SVG timeline, showing which projects someone participated in and how their focus changed.
 
@@ -25,13 +25,12 @@ The chart names the 5 repositories with the most contributions. Every remaining 
 
 ## Features
 
-- GitHub “Last year” timeline: uses the profile's default range and usually spans 13 calendar months.
-- Repository rows: each row represents a visible repository the user contributed to, and each cell represents all of its contributions for one month.
-- Relative intensity: four levels distinguish quiet and active months, while empty months use the theme track.
-- Contribution focus: names the top 5 repositories by total contributions and combines the rest month by month into `Other`.
-- Contribution totals: shows each repository's total for the period at the right.
-- Theme support: one SVG automatically responds to GitHub light and dark themes.
-- Cache handling: generates versioned filenames from content hashes and removes older charts automatically.
+- Time range: follows the GitHub profile "Last year" period, usually spanning 13 calendar months.
+- Repository view: rows represent repositories and cells show monthly contribution intensity.
+- Focus grouping: shows the top 5 repositories and groups the rest by month as `Other`.
+- Contribution totals: shows each repository's period total at the right of its row.
+- Theme support: one SVG responds automatically to GitHub light and dark themes.
+- Cache updates: creates content-hashed filenames and removes older charts automatically.
 
 ## Preview
 
@@ -129,7 +128,7 @@ Full `owner/repo` color keys are recommended to avoid collisions between reposit
 
 Theme fields are `light_text`, `light_muted`, `light_empty`, `dark_text`, `dark_muted`, and `dark_empty`.
 
-## Action inputs and outputs
+## Action Inputs & Outputs
 
 ### Inputs
 
@@ -148,7 +147,7 @@ Theme fields are `light_text`, `light_muted`, `light_empty`, `dark_text`, `dark_
 | `image` | Path to the generated versioned SVG |
 | `changed` | Whether the SVG, README reference, or old generated files changed |
 
-## Versioning and Security
+## Versioning & Security
 
 - Latest stable release: use the workflow above to resolve and check out the latest stable release through the Releases API.
 - Full release tag: select and pin one from [Releases](https://github.com/KrelinnBios/github-profile-contribution-focus/releases) when upgrades should remain explicit.
@@ -169,6 +168,6 @@ python examples/generate_preview.py
 
 This project is released under the [MIT License](./LICENSE). Use, modification, distribution, and commercial use are permitted as long as the license and copyright notice are retained.
 
-## Feedback and contributions
+## Feedback & Contributions
 
 Use [GitHub Issues](https://github.com/KrelinnBios/github-profile-contribution-focus/issues) to report usage problems, ask about counting rules, suggest features, or propose other improvements.
