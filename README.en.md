@@ -109,6 +109,7 @@ The example runs automatically every 6 hours and can also be triggered manually.
 
 - Data comes from the GitHub GraphQL API `contributionsCollection` field.
 - Totals follow GitHub's contribution calendar. Commits, issues, pull requests, reviews, and repository creations that GraphQL can attribute are assigned to their repositories.
+- `Contributions` in the chart is the sum of those contribution types, not the commits count shown on a repository page. The latter covers the repository's full history and all authors, so both the scope and metric differ.
 - Every repository visible to the token is eligible, regardless of who owns it.
 - The range comes directly from the default `contributionsCollection` start and end times, matching the profile's “last year” period; the first and last months are usually partial.
 - Each month is queried separately. Commits are summed from daily nodes, while other types use connection totals to avoid item-pagination gaps.

@@ -68,7 +68,10 @@ def build_svg(
     grid_y = 72
     grid_x = padding_x + label_width
     grid_width = len(months) * cell_size + (len(months) - 1) * cell_gap
-    total_value_x = grid_x + grid_width + 58
+    # Leave enough room to spell out the metric. "Total" was easily mistaken
+    # for the repository's lifetime commit count, but these values include all
+    # GitHub contribution types attributed to the user in the profile range.
+    total_value_x = grid_x + grid_width + 108
     width = total_value_x + padding_x
     height = grid_y + max(1, len(rows)) * row_height + 16
 
@@ -122,7 +125,8 @@ def build_svg(
             )
         row_elements.append(
             f'    <text class="total" x="{total_value_x}" y="{y + 14}" '
-            f'text-anchor="end">{row.total}</text>'
+            f'text-anchor="end"><title>Includes commits, issues, pull requests, '
+            f'reviews, and repository creations</title>{row.total}</text>'
         )
         descriptions.append(f"{label} {row.total}")
 
@@ -138,7 +142,7 @@ def build_svg(
         grid_content = f'''
   <g aria-hidden="true">
 {chr(10).join(month_elements)}
-    <text class="month" x="{total_value_x}" y="{header_y}" text-anchor="end">Total</text>
+    <text class="month" x="{total_value_x}" y="{header_y}" text-anchor="end">Contributions</text>
 {chr(10).join(row_elements)}
   </g>'''
 
