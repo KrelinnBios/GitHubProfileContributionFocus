@@ -39,9 +39,15 @@ class BuildSvgTests(unittest.TestCase):
 
         self.assertNotIn('<text class="title"', svg)
         self.assertIn('<text class="subtitle" x="24" y="28">', svg)
-        self.assertIn('height="280" viewBox="0 0 590 280"', svg)
+        self.assertIn('height="280" viewBox="0 0 640 280"', svg)
         self.assertIn("contributions across", svg)
         self.assertIn("8 repositories", svg)
+        self.assertIn(">Contributions</text>", svg)
+        self.assertNotIn(">Total</text>", svg)
+        self.assertIn(
+            "Includes commits, issues, pull requests, reviews, and repository creations",
+            svg,
+        )
         self.assertIn(">Other</text>", svg)
         self.assertEqual(78, len(re.findall(r'<rect class="cell(?: |\-)', svg)))
         self.assertEqual(6, len(re.findall(r'<text class="total"', svg)))
