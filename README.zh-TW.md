@@ -109,7 +109,7 @@ GitHub Profile Contribution Focus 是一個可重複使用的 GitHub Action。�
 
 - 資料來自 GitHub GraphQL API 的 `contributionsCollection`。
 - 總數以 GitHub 貢獻日曆為準；可由 GraphQL 歸屬儲存庫的 Commit、Issue、Pull Request、Review 和儲存庫建立貢獻會分別計入對應儲存庫。
-- 圖中的 `Contributions` 是上述貢獻類型的總和，並非儲存庫首頁顯示的 commits 數。後者統計該儲存庫完整歷史、所有作者的提交，兩者的統計範圍和口徑皆不同。
+- 圖中的 `Contrib` 是上述貢獻類型的總和，並非儲存庫首頁顯示的 commits 數。後者統計該儲存庫完整歷史、所有作者的提交，兩者的統計範圍和口徑皆不同。
 - 統計所有參與過且權杖可見的儲存庫，不限制儲存庫是否屬於本人。
 - 統計範圍直接採用 GitHub `contributionsCollection` 的預設起止時間，與個人主頁「Last year」口徑保持一致；首尾月份通常是不完整月份。
 - 每個月份單獨查詢，Commit 依每日節點累加，其他類型使用連線總數，避免因逐項分頁遺漏月份資料。

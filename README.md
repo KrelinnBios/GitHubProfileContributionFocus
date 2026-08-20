@@ -109,7 +109,7 @@ GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读�
 
 - 数据来自 GitHub GraphQL API 的 `contributionsCollection`。
 - 总数以 GitHub 贡献日历为准；可由 GraphQL 归属仓库的 Commit、Issue、Pull Request、Review 和仓库创建贡献会分别计入对应仓库。
-- 图中的 `Contributions` 是上述贡献类型之和，并非仓库首页显示的 commits 数。后者统计该仓库全历史、所有作者的提交，两者统计范围和口径都不同。
+- 图中的 `Contrib` 是上述贡献类型之和，并非仓库首页显示的 commits 数。后者统计该仓库全历史、所有作者的提交，两者统计范围和口径都不同。
 - 统计所有参与过且令牌可见的仓库，不限制仓库是否属于本人。
 - 统计范围直接采用 GitHub `contributionsCollection` 的默认起止时间，与个人主页「Last year」口径保持一致；首尾月份通常是不完整月份。
 - 每个月单独查询，Commit 按每日节点累加，其他类型使用连接总数，避免因逐项分页遗漏月度数据。
