@@ -164,9 +164,21 @@ python -m unittest discover -s tests -v
 python examples/generate_preview.py
 ```
 
+## 隱私與資料
+
+- Action 只讀取 GitHub API 回傳、且呼叫權杖可見的貢獻資料，不會上傳或保存額外的個人資料。
+- 產生的 SVG 和 README 修改由使用者自己的工作流程提交到自己的儲存庫。
+- 私有儲存庫名稱和無法安全歸屬的貢獻不會寫入產生的圖表。
+
+## 內容邊界
+
+- 圖表反映 GitHub 統計範圍內的可見貢獻或公開儲存庫語言資料，不代表能力、熟練度、投入時間或個人身分。
+- GitHub、儲存庫名稱、貢獻資料和產生圖表中的其他第三方內容，分別適用其權利人的條款與權利聲明。
+- 使用者應自行確認權杖權限、產生內容和自動提交行為符合所在組織及儲存庫規則。
+
 ## 授權條款
 
-本專案依據 [MIT License](./LICENSE) 發布，允許使用、修改、散布與商業使用，但須保留授權條款與版權聲明。
+本專案依據 [MIT License](./LICENSE) 發布，允許使用、修改、散布與商業使用，但須保留授權條款與版權聲明。GitHub 資料、GitHub Actions、第三方軟體、外部服務和使用者產生的內容，不會僅因本專案讀取、呼叫或產生而自動納入 MIT 授權，詳見 [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)。
 
 ## 回饋與貢獻
 
