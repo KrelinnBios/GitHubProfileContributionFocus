@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/KrelinnBios/github-profile-contribution-focus/releases"><img src="https://img.shields.io/github/v/release/KrelinnBios/github-profile-contribution-focus?style=flat-square&label=release&color=7F52FF" alt="Latest release"></a>
+  <a href="https://github.com/KrelinnBios/GitHubProfileContributionFocus/releases"><img src="https://img.shields.io/github/v/release/KrelinnBios/GitHubProfileContributionFocus?style=flat-square&label=release&color=7F52FF" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/platform-GitHub%20Actions-247344?style=flat-square" alt="GitHub Actions">
   <img src="https://img.shields.io/badge/license-MIT-1f5f9c?style=flat-square" alt="MIT License">
 </p>
@@ -85,13 +85,13 @@ The core steps resolve and check out the latest stable release at runtime:
   env:
     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   run: |
-    release_tag=$(gh api repos/KrelinnBios/github-profile-contribution-focus/releases/latest --jq .tag_name)
+    release_tag=$(gh api repos/KrelinnBios/GitHubProfileContributionFocus/releases/latest --jq .tag_name)
     echo tag=$release_tag >> $GITHUB_OUTPUT
 
 - name: Check out contribution focus action
   uses: actions/checkout@v7
   with:
-    repository: KrelinnBios/github-profile-contribution-focus
+    repository: KrelinnBios/GitHubProfileContributionFocus
     ref: ${{ steps.contribution-focus-release.outputs.tag }}
     path: .github/actions/github-profile-contribution-focus
 
@@ -151,7 +151,7 @@ Theme fields are `light_text`, `light_muted`, `light_empty`, `dark_text`, `dark_
 ## Versioning & Security
 
 - Latest stable release: use the workflow above to resolve and check out the latest stable release through the Releases API.
-- Full release tag: select and pin one from [Releases](https://github.com/KrelinnBios/github-profile-contribution-focus/releases) when upgrades should remain explicit.
+- Full release tag: select and pin one from [Releases](https://github.com/KrelinnBios/GitHubProfileContributionFocus/releases) when upgrades should remain explicit.
 - Full commit SHA: provides the strictest supply-chain reproducibility but requires manual update tracking.
 
 The profile workflow uses `contents: write` only to commit the generated SVG and README. The Action does not write to other repositories.
@@ -183,4 +183,4 @@ This project is released under the [MIT License](./LICENSE). Use, modification, 
 
 ## Feedback & Contributions
 
-Use [GitHub Issues](https://github.com/KrelinnBios/github-profile-contribution-focus/issues) to report usage problems, ask about counting rules, suggest features, or propose other improvements.
+Use [GitHub Issues](https://github.com/KrelinnBios/GitHubProfileContributionFocus/issues) to report usage problems, ask about counting rules, suggest features, or propose other improvements.
