@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/KrelinnBios/github-profile-contribution-focus/releases"><img src="https://img.shields.io/github/v/release/KrelinnBios/github-profile-contribution-focus?style=flat-square&label=%E7%89%88%E6%9C%AC&color=7F52FF" alt="最新版本"></a>
+  <a href="https://github.com/KrelinnBios/GitHubProfileContributionFocus/releases"><img src="https://img.shields.io/github/v/release/KrelinnBios/GitHubProfileContributionFocus?style=flat-square&label=%E7%89%88%E6%9C%AC&color=7F52FF" alt="最新版本"></a>
   <img src="https://img.shields.io/badge/平台-GitHub%20Actions-247344?style=flat-square" alt="GitHub Actions">
   <img src="https://img.shields.io/badge/授權-MIT-1f5f9c?style=flat-square" alt="MIT License">
 </p>
@@ -85,13 +85,13 @@ GitHub Profile Contribution Focus 是一個可重複使用的 GitHub Action。�
   env:
     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   run: |
-    release_tag=$(gh api repos/KrelinnBios/github-profile-contribution-focus/releases/latest --jq .tag_name)
+    release_tag=$(gh api repos/KrelinnBios/GitHubProfileContributionFocus/releases/latest --jq .tag_name)
     echo tag=$release_tag >> $GITHUB_OUTPUT
 
 - name: Check out contribution focus action
   uses: actions/checkout@v7
   with:
-    repository: KrelinnBios/github-profile-contribution-focus
+    repository: KrelinnBios/GitHubProfileContributionFocus
     ref: ${{ steps.contribution-focus-release.outputs.tag }}
     path: .github/actions/github-profile-contribution-focus
 
@@ -151,7 +151,7 @@ GitHub Profile Contribution Focus 是一個可重複使用的 GitHub Action。�
 ## 版本選擇與安全
 
 - 最新正式版：建議使用上方工作流程，透過 Releases API 自動解析並簽出最新正式版本。
-- 完整版本標籤：可從 [Releases](https://github.com/KrelinnBios/github-profile-contribution-focus/releases) 選擇並固定，升級時由使用者決定。
+- 完整版本標籤：可從 [Releases](https://github.com/KrelinnBios/GitHubProfileContributionFocus/releases) 選擇並固定，升級時由使用者決定。
 - 固定提交 SHA：可獲得最嚴格的供應鏈可重複性，但需要手動追蹤更新。
 
 個人主頁工作流程中的 `contents: write` 用於提交產生的 SVG 和 README；Action 本身不會向其他儲存庫寫入內容。
@@ -183,4 +183,4 @@ python examples/generate_preview.py
 
 ## 回饋與貢獻
 
-歡迎透過 [GitHub Issue](https://github.com/KrelinnBios/github-profile-contribution-focus/issues) 提交使用問題、統計口徑疑問、功能建議或其他改進建議。
+歡迎透過 [GitHub Issue](https://github.com/KrelinnBios/GitHubProfileContributionFocus/issues) 提交使用問題、統計口徑疑問、功能建議或其他改進建議。
