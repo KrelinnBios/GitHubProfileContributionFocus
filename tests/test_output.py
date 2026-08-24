@@ -33,10 +33,18 @@ class OutputTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             readme = root / "README.md"
+            old_image = root / "contribution-focus-000000000000.svg"
             readme.write_text("# Profile", encoding="utf-8")
+            old_image.write_text("old", encoding="utf-8")
 
             with self.assertRaisesRegex(RuntimeError, "No contribution focus"):
                 write_outputs("<svg></svg>", readme, root, "contribution-focus")
+
+            self.assertTrue(old_image.exists())
+            self.assertEqual(
+                [old_image],
+                sorted(root.glob("contribution-focus-*.svg")),
+            )
 
 
 if __name__ == "__main__":

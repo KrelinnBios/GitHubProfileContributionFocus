@@ -15,19 +15,34 @@ DEFAULT_THEME = {
 DEFAULT_COLORS = {"Other": "#8B949E"}
 
 
+def _object_section(raw: dict, name: str) -> dict:
+    value = raw.get(name, {})
+    if not isinstance(value, dict):
+        raise RuntimeError(f"configuration field '{name}' must be a JSON object")
+    return value
+
+
 def load_config(config_path: Path) -> dict:
     raw = {}
     if config_path.exists():
         raw = json.loads(config_path.read_text(encoding="utf-8-sig"))
+    if not isinstance(raw, dict):
+        raise RuntimeError("configuration root must be a JSON object")
 
     theme = DEFAULT_THEME.copy()
-    theme.update(raw.get("theme", {}))
+    theme.update(_object_section(raw, "theme"))
     colors = DEFAULT_COLORS.copy()
-    colors.update(raw.get("colors", {}))
+    colors.update(_object_section(raw, "colors"))
+
+    excluded_repositories = raw.get("excluded_repositories", [])
+    if not isinstance(excluded_repositories, list):
+        raise RuntimeError(
+            "configuration field 'excluded_repositories' must be a JSON array"
+        )
 
     excluded = {
         str(repository).strip().casefold()
-        for repository in raw.get("excluded_repositories", [])
+        for repository in excluded_repositories
         if str(repository).strip()
     }
     return {

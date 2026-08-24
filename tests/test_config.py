@@ -33,6 +33,25 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual("#FFFFFF", result["theme"]["dark_text"])
             self.assertIn("light_text", result["theme"])
 
+    def test_configuration_root_must_be_an_object(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            path.write_text("[]", encoding="utf-8")
+
+            with self.assertRaisesRegex(RuntimeError, "root must be a JSON object"):
+                load_config(path)
+
+    def test_excluded_repositories_must_be_an_array(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            path.write_text(
+                json.dumps({"excluded_repositories": "owner/repository"}),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(RuntimeError, "must be a JSON array"):
+                load_config(path)
+
 
 if __name__ == "__main__":
     unittest.main()
