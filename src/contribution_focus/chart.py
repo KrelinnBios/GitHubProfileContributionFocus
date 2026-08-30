@@ -68,8 +68,6 @@ def build_svg(
     grid_y = 72
     grid_x = padding_x + label_width
     grid_width = len(months) * cell_size + (len(months) - 1) * cell_gap
-    # "Total" was easily mistaken for the repository's lifetime commit count.
-    # Use a compact contribution label while retaining the original card width.
     total_value_x = grid_x + grid_width + 58
     width = total_value_x + padding_x
     height = grid_y + max(1, len(rows)) * row_height + 16
@@ -141,7 +139,7 @@ def build_svg(
         grid_content = f'''
   <g aria-hidden="true">
 {chr(10).join(month_elements)}
-    <text class="month" x="{total_value_x}" y="{header_y}" text-anchor="end">Contrib</text>
+    <text class="month" x="{total_value_x}" y="{header_y}" text-anchor="end">Total</text>
 {chr(10).join(row_elements)}
   </g>'''
 
