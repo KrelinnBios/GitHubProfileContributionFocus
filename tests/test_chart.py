@@ -42,8 +42,8 @@ class BuildSvgTests(unittest.TestCase):
         self.assertIn('height="280" viewBox="0 0 590 280"', svg)
         self.assertIn("contributions across", svg)
         self.assertIn("8 repositories", svg)
-        self.assertIn(">Contrib</text>", svg)
-        self.assertNotIn(">Total</text>", svg)
+        self.assertIn(">Total</text>", svg)
+        self.assertNotIn(">Contrib</text>", svg)
         self.assertIn(
             "Includes commits, issues, pull requests, reviews, and repository creations",
             svg,
