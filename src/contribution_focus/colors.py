@@ -2,12 +2,12 @@
 
 
 RAINBOW_COLORS = (
-    "#FF6B6B",
-    "#FFA94D",
-    "#FFD43B",
-    "#69DB7C",
-    "#4DABF7",
-    "#B197FC",
+    "#FF1744",
+    "#FF9100",
+    "#FFEA00",
+    "#00E676",
+    "#2979FF",
+    "#AA00FF",
 )
 
 
