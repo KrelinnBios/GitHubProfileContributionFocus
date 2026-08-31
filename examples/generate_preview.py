@@ -44,15 +44,7 @@ def main():
     ]
     config = {
         "theme": DEFAULT_THEME.copy(),
-        "colors": {
-            **DEFAULT_COLORS,
-            "KrelinnBios/YamiboReaderLite": "#7F52FF",
-            "KrelinnBios/NeoDBLite": "#E34F26",
-            "KrelinnBios/AceSurvey": "#F7DF1E",
-            "KrelinnBios/github-profile-language-donut": "#00B8D9",
-            "KrelinnBios/KrelinnBios": "#22C55E",
-            "Other": "#EC4899",
-        },
+        "colors": DEFAULT_COLORS.copy(),
     }
     (ROOT / "examples" / "preview.svg").write_text(
         build_svg(rows, months, 6, config), encoding="utf-8"

@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).parents[1] / "src"))
 
 from contribution_focus.aggregate import FocusRow
 from contribution_focus.chart import build_svg, intensity_level
+from contribution_focus.colors import RAINBOW_COLORS
 from contribution_focus.config import DEFAULT_COLORS, DEFAULT_THEME
 from contribution_focus.dates import month_windows
 
@@ -54,6 +55,18 @@ class BuildSvgTests(unittest.TestCase):
         self.assertIn("@media (prefers-color-scheme: dark)", svg)
         self.assertIn('class="month current-month"', svg)
         self.assertIn('class="current-marker"', svg)
+        for color in RAINBOW_COLORS:
+            self.assertEqual(13, svg.count(f'fill="{color}"'))
+
+    def test_explicit_color_override_takes_priority_over_row_color(self):
+        rows = [FocusRow("owner/repository", (1,) * 13)]
+        custom_config = config()
+        custom_config["colors"]["owner/repository"] = "#123456"
+
+        svg = build_svg(rows, self.months, 1, custom_config)
+
+        self.assertEqual(13, svg.count('fill="#123456"'))
+        self.assertNotIn(f'fill="{RAINBOW_COLORS[0]}"', svg)
 
     def test_duplicate_short_names_use_full_repository_name(self):
         rows = [

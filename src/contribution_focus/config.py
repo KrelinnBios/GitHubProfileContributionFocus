@@ -12,7 +12,7 @@ DEFAULT_THEME = {
     "dark_empty": "#30363d",
 }
 
-DEFAULT_COLORS = {"Other": "#8B949E"}
+DEFAULT_COLORS = {}
 
 
 def _object_section(raw: dict, name: str) -> dict:

@@ -28,6 +28,7 @@ GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读�
 - 时间范围：沿用 GitHub 主页「Last year」统计范围，通常覆盖 13 个自然月。
 - 仓库视图：按仓库和月份展示贡献强度，空月份保留主题色轨道。
 - 重点归并：展示贡献量最高的 5 个仓库，其余逐月汇总为 `Other`。
+- 固定彩虹：六行从上到下依次使用红、橙、黄、绿、蓝、紫。
 - 贡献总数：在每行右侧展示该仓库在统计周期内的贡献总数。
 - 主题适配：同一 SVG 自动响应 GitHub 浅色与深色模式。
 - 缓存更新：用内容摘要生成版本化文件名，并自动清理旧图。
@@ -122,7 +123,7 @@ GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读�
 | --- | --- | --- |
 | `owner` | 当前仓库所有者 | 需要统计的 GitHub 用户名 |
 | `excluded_repositories` | `[]` | 不参与统计的仓库，可写 `owner/repo` 或仓库名 |
-| `colors` | 稳定自动配色 | 用仓库全名、仓库名或 `Other` 覆盖行颜色 |
+| `colors` | 红、橙、黄、绿、蓝、紫固定行序 | 用仓库全名、仓库名或 `Other` 覆盖行颜色 |
 | `theme` | GitHub 浅色/深色配色 | 覆盖文字和空色块颜色 |
 
 建议使用完整的 `owner/repo` 作为颜色键，避免不同所有者下的同名仓库发生冲突。

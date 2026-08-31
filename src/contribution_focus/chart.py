@@ -102,7 +102,7 @@ def build_svg(
     for row_index, row in enumerate(rows):
         y = grid_y + row_index * row_height
         label = labels[row.name]
-        color = color_for(row.name, colors)
+        color = color_for(row.name, colors, row_index)
         row_elements.append(
             f'    <text class="repo-label" x="{padding_x}" y="{y + 14}">'
             f'{html.escape(label)}</text>'
