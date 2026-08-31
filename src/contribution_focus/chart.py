@@ -154,9 +154,9 @@ def build_svg(
     .current-month {{ fill: {theme["light_text"]}; font-weight: 700; }}
     .current-marker {{ fill: {theme["light_text"]}; opacity: 0.55; }}
     .cell-empty {{ fill: {theme["light_empty"]}; opacity: 0.34; }}
-    .level-1 {{ fill-opacity: 0.28; }}
-    .level-2 {{ fill-opacity: 0.50; }}
-    .level-3 {{ fill-opacity: 0.74; }}
+    .level-1 {{ fill-opacity: 0.55; }}
+    .level-2 {{ fill-opacity: 0.72; }}
+    .level-3 {{ fill-opacity: 0.86; }}
     .level-4 {{ fill-opacity: 1; }}
     @media (prefers-color-scheme: dark) {{
       .repo-label, .current-month {{ fill: {theme["dark_text"]}; }}
