@@ -187,4 +187,4 @@ This project is released under the [MIT License](./LICENSE). Use, modification, 
 
 ## Feedback & Contributions
 
-Use [GitHub Issues](https://github.com/KrelinnBios/GitHubProfileContributionFocus/issues) to report usage problems, ask about counting rules, suggest features, or propose other improvements.
+Use [GitHub Issue](https://github.com/KrelinnBios/GitHubProfileContributionFocus/issues) to report usage problems, ask about counting rules, suggest features, or propose other improvements.
