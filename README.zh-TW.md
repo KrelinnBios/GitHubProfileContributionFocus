@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>儲存庫 × 月份 · 貢獻重心 · 自動更新</strong><br>
-  依據 GitHub「Last year」統計範圍產生簡潔的貢獻重心圖
+  依據「Last year」統計範圍產生簡潔的貢獻重心圖
 </p>
 
 <p align="center">
