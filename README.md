@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>仓库 × 月份 · 贡献重心 · 自动更新</strong><br>
-  基于 GitHub「Last year」统计范围生成简洁的贡献重心图
+  基于「Last year」统计范围生成简洁的贡献重心图
 </p>
 
 <p align="center">
