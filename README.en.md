@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>Repositories × Months · Contribution Focus · Automatic Updates</strong><br>
-  Generate a concise contribution focus chart from GitHub's “Last year” range
+  Generate a concise contribution focus chart from GitHub's "Last year" range
 </p>
 
 <p align="center">
@@ -19,14 +19,14 @@
 
 ## About
 
-GitHub Profile Contribution Focus is a reusable GitHub Action. It reads the visible contributions in a GitHub profile's “last year” range and generates a repository-by-month SVG timeline, showing which projects someone participated in and how their focus changed.
+GitHub Profile Contribution Focus is a reusable GitHub Action. It reads the visible contributions in a GitHub profile's "Last year" range and generates a repository-by-month SVG timeline, showing which projects someone participated in and how their focus changed.
 
 The chart names the 5 repositories with the most contributions. Every remaining repository and every contribution that cannot be safely attributed to a repository are combined month by month into `Other`. The generated image stays in the profile repository and does not depend on an external image service.
 
 ## Features
 
 - Time range: follows the GitHub profile "Last year" period, usually spanning 13 calendar months.
-- Repository view: rows represent repositories and cells show monthly contribution intensity.
+- Repository view: rows represent repositories and cells show monthly contribution intensity, with empty months preserving theme-colored tracks.
 - Focus grouping: shows the top 5 repositories and groups the rest by month as `Other`.
 - Fixed rainbow: the six rows use red, orange, yellow, green, blue, and purple from top to bottom.
 - Contribution totals: shows each repository's period total at the right of its row.
@@ -106,16 +106,16 @@ The core steps resolve and check out the latest stable release at runtime:
 
 The example runs automatically every 6 hours and can also be triggered manually. Each run resolves the latest stable release, and no cross-repository token is required.
 
-## Counting rules
+## Counting Rules
 
 - Data comes from the GitHub GraphQL API `contributionsCollection` field.
 - Totals follow GitHub's contribution calendar. Commits, issues, pull requests, reviews, and repository creations that GraphQL can attribute are assigned to their repositories.
 - `Contrib` in the chart is the sum of those contribution types, not the commits count shown on a repository page. The latter covers the repository's full history and all authors, so both the scope and metric differ.
 - Every repository visible to the token is eligible, regardless of who owns it.
-- The range comes directly from the default `contributionsCollection` start and end times, matching the profile's “last year” period; the first and last months are usually partial.
+- The range comes directly from the default `contributionsCollection` start and end times, matching the profile's "Last year" period; the first and last months are usually partial.
 - Each month is queried separately. Commits are summed from daily nodes, while other types use connection totals to avoid item-pagination gaps.
 - Discussions, inaccessible private contributions, and other counts without a safe repository attribution are placed in `Other`; private repository names are never exposed.
-- Ranking uses total contributions from GitHub's “Last year” range, while `Other` is aggregated separately for each month.
+- Ranking uses total contributions from GitHub's "Last year" range, while `Other` is aggregated separately for each month.
 
 ## Configuration
 
@@ -128,7 +128,10 @@ The example runs automatically every 6 hours and can also be triggered manually.
 
 Full `owner/repo` color keys are recommended to avoid collisions between repositories with the same short name.
 
-Theme fields are `light_text`, `light_muted`, `light_empty`, `dark_text`, `dark_muted`, and `dark_empty`.
+Overridable theme fields:
+
+- `light_text`, `light_muted`, `light_empty`
+- `dark_text`, `dark_muted`, `dark_empty`
 
 ## Action Inputs & Outputs
 
@@ -157,7 +160,7 @@ Theme fields are `light_text`, `light_muted`, `light_empty`, `dark_text`, `dark_
 
 The profile workflow uses `contents: write` only to commit the generated SVG and README. The Action does not write to other repositories.
 
-## Development
+## Local Development
 
 The project uses only the Python standard library:
 
