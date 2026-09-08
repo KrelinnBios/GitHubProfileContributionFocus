@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>Repositories × Months · Contribution Focus · Automatic Updates</strong><br>
-  Generate a concise contribution focus chart from GitHub's "Last year" range
+  Generate a concise contribution focus chart from the "Last year" range
 </p>
 
 <p align="center">
