@@ -104,7 +104,7 @@ GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读�
     config-path: contribution-focus.config.json
 ```
 
-示例工作流每 6 小时自动运行，也支持手动运行；每次运行都会解析最新正式版本，无需配置跨仓库 Token。
+示例工作流每 6 小时运行一次，也支持手动触发。
 
 ## 统计口径
 
@@ -177,9 +177,7 @@ python examples/generate_preview.py
 
 ## 内容边界
 
-- 图表反映 GitHub 统计范围内的可见贡献或公开仓库语言数据，不代表能力、熟练度、投入时间或个人身份。
-- GitHub、仓库名称、贡献数据和生成图表中的其他第三方内容分别适用其权利人的条款与权利声明。
-- 使用者应自行确认令牌权限、生成内容和自动提交行为符合所在组织及仓库规则。
+- 图表仅反映 GitHub 统计范围内的可见贡献，不代表开发能力或实际投入时间。
 
 ## 许可协议
 
