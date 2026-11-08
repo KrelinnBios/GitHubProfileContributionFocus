@@ -104,7 +104,7 @@ The core steps resolve and check out the latest stable release at runtime:
     config-path: contribution-focus.config.json
 ```
 
-The example runs automatically every 6 hours and can also be triggered manually. Each run resolves the latest stable release, and no cross-repository token is required.
+The example workflow runs every 6 hours and can also be triggered manually.
 
 ## Counting Rules
 
@@ -177,9 +177,7 @@ python examples/generate_preview.py
 
 ## Content Boundaries
 
-- The chart reflects visible contributions or public repository language data in GitHub's defined scope. It does not represent ability, proficiency, time spent, or personal identity.
-- GitHub, repository names, contribution data, and other third-party content in generated charts remain subject to their respective terms and rights notices.
-- Users are responsible for ensuring token permissions, generated content, and automated commits comply with their organization and repository rules.
+- The chart shows visible contributions in GitHub's selected time range; it does not measure development ability or time spent.
 
 ## License
 
