@@ -28,8 +28,8 @@ The chart names the 5 repositories with the most contributions. Every remaining 
 - Time range: follows the GitHub profile "Last year" period, usually spanning 13 calendar months.
 - Repository view: rows represent repositories and cells show monthly contribution intensity, with empty months preserving theme-colored tracks.
 - Focus grouping: shows the top 5 repositories and groups the rest by month as `Other`.
-- Fixed rainbow: the six rows use red, orange, yellow, green, blue, and purple from top to bottom.
-- Contribution totals: shows each repository's period total at the right of its row.
+- Default colors: the six rows use red, orange, yellow, green, blue, and purple from top to bottom; colors can be overridden.
+- Contribution totals: shows each row's period total, including `Other`, on the right.
 - Theme support: one SVG responds automatically to GitHub light and dark themes.
 - Cache updates: creates content-hashed filenames and removes older charts automatically.
 
