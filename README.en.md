@@ -19,9 +19,7 @@
 
 ## About
 
-GitHub Profile Contribution Focus is a reusable GitHub Action. It reads the visible contributions in a GitHub profile's "Last year" range and generates a repository-by-month SVG timeline, showing which projects someone participated in and how their focus changed.
-
-The chart names the 5 repositories with the most contributions. Every remaining repository and every contribution that cannot be safely attributed to a repository are combined month by month into `Other`. The generated image stays in the profile repository and does not depend on an external image service.
+GitHub Profile Contribution Focus is a reusable GitHub Action. It reads the visible contributions in a GitHub profile's "Last year" range and generates a repository-by-month SVG timeline, showing which projects someone participated in and how their focus changed. The chart names the 5 repositories with the most contributions. Every remaining repository and every contribution that cannot be safely attributed to a repository are combined month by month into `Other`. The generated image stays in the profile repository and does not depend on an external image service.
 
 ## Features
 
