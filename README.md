@@ -19,9 +19,7 @@
 
 ## 项目简介
 
-GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读取 GitHub 个人主页「Last year」范围内的可见贡献，按仓库和月份生成 SVG 时间带，展示这一年主要参与了哪些项目，以及贡献重心如何变化。
-
-图表只显示贡献量最高的 5 个仓库，其余仓库和无法安全归属到具体仓库的贡献逐月汇总为 `Other`。生成结果保存在自己的主页仓库中，不依赖外部图片服务。
+GitHub Profile Contribution Focus 是一个可复用的 GitHub Action。它读取 GitHub 个人主页「Last year」范围内的可见贡献，按仓库和月份生成 SVG 时间带，展示这一年主要参与了哪些项目，以及贡献重心如何变化。图表只显示贡献量最高的 5 个仓库，其余仓库和无法安全归属到具体仓库的贡献逐月汇总为 `Other`。生成结果保存在自己的主页仓库中，不依赖外部图片服务。
 
 ## 功能概览
 
